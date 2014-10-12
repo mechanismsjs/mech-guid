@@ -16,7 +16,7 @@ This project contains mechanisms for Guids (Globally unique IDs)
 
 * [Git mech-core][mech-core-link] latest version.
 * [Git mech-web][mech-web-link] latest version.
-* [Git mech-guid][mech-guid-link] latest version (This project).
+* [Git mech-guid][mech-guid-link] latest version (this project).
 * [Git mech-library][mech-library-link] latest version.
 
 # Supported Mechanisms
@@ -24,7 +24,7 @@ This project contains mechanisms for Guids (Globally unique IDs)
 * *empty* - An empty guid mechanism
 * *guid* - Primitive 'guid' mechanism
 * *isValid* - A guid validator mechanism
-* *make* - Generates a random Guid (algorithm stolen from e7 of [How To Create  a Guid](https://stackoverflow.com/questions/105034/how-to-create-a-guid-uuid-in-javascript))
+* *make* - Generates a random guid (algorithm stolen from e7 of [How To Create  a Guid](https://stackoverflow.com/questions/105034/how-to-create-a-guid-uuid-in-javascript))
 
 ## empty mechanism
 
@@ -94,7 +94,7 @@ newGuid.goStr; // returns an empty guid
 newGuid.isEmpty; // returns true
 ```
 
-Create an invalid guid while validate is false returns an invalid guid.
+Create an invalid guid while validate is false returns the invalid guid.
 
 ```javascript
 var newGuid = mguid.guid("SOME VALUE", false);

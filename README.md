@@ -1,7 +1,7 @@
 [mech-home-link]: https://github.com/mechanisms/mech "Home repository for mechanisms"
 [mech-core-link]: https://github.com/mechanismsjs/mech-core "Core mechanisms"
 [mech-web-link]: https://github.com/mechanismsjs/mech-web "Web centric DOM mechanisms"
-[mech-guid-link]: https://github.com/mechanisms/guid "Guid mechanisms"
+[mech-guid-link]: https://github.com/mechanisms/mech-guid "Guid mechanisms"
 [mech-library-link]: https://github.com/mechanismsjs/mech-library "Clone to easily create new mechanism libraries"
 
 # mech-guid
@@ -47,7 +47,7 @@ A guid primitive.
 Create a new guid:
 
 ```javascript
-var newGuid = mguid.guid();
+var newGuid = mguid.guid(); // the guid is generated right right here
 
 newGuid.go; // returns the new guid
 newGuid.goStr; // returns the new guid
@@ -57,7 +57,6 @@ newGuid.isEmpty; // returns false
 Create a guid from a string primitive:
 
 ```javascript
-// A guid from a string
 var newGuid = mguid.guid("60bce630-5a0c-41c1-abd3-f21df4d0290f");
 
 newGuid.go; // returns the guid
@@ -78,14 +77,14 @@ newGuid.isEmpty; // returns true
 Create a guid using *make*. This is the same as making a guid without passing any parameter
 
 ```javascript
-var newGuid = mguid.guid(mguid.make.go);
+var newGuid = mguid.guid(mguid.make.go); // the guid is generated right right here
 
 newGuid.go; // returns the new guid
 newGuid.goStr; // returns the new guid
 newGuid.isEmpty; // returns false
 ```
 
-Try to create an invalid guid and validate is true returns an empty guid.
+Create an invalid guid while validate is true returns an empty guid.
 
 ```javascript
 var newGuid = mguid.guid("INVALID", true);
@@ -93,6 +92,20 @@ var newGuid = mguid.guid("INVALID", true);
 newGuid.go; // returns an empty guid
 newGuid.goStr; // returns an empty guid
 newGuid.isEmpty; // returns true
+```
+
+Create an invalid guid while validate is false returns an invalid guid.
+
+```javascript
+var newGuid = mguid.guid("SOME VALUE", false);
+
+newGuid.go; // returns "SOME VALUE"
+newGuid.goStr; // returns "SOME VALUE"
+newGuid.isEmpty; // returns false
+
+// BUT
+
+mguid.isValid(newGuid).go; // returns false
 ```
 
 ## isValid mechanism

@@ -1,7 +1,7 @@
 [mech-home-link]: https://github.com/mechanisms/mech "Home repository for mechanisms"
 [mech-core-link]: https://github.com/mechanismsjs/mech-core "Core mechanisms"
 [mech-web-link]: https://github.com/mechanismsjs/mech-web "Web centric DOM mechanisms"
-[mech-guid-link]: https://github.com/mechanisms/mech-guid "Guid mechanisms"
+[mech-guid-link]: https://github.com/mechanismsjs/mech-guid "Guid mechanisms"
 [mech-library-link]: https://github.com/mechanismsjs/mech-library "Clone to easily create new mechanism libraries"
 
 # mech-guid
@@ -16,7 +16,7 @@ This project contains mechanisms for Guids (Globally unique IDs)
 
 * [Git mech-core][mech-core-link] latest version.
 * [Git mech-web][mech-web-link] latest version.
-* [Git mech-guid][mech-guid-link] latest version.
+* [Git mech-guid][mech-guid-link] latest version (This project).
 * [Git mech-library][mech-library-link] latest version.
 
 # Supported Mechanisms

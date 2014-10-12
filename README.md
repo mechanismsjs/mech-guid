@@ -30,8 +30,8 @@ This project contains mechanisms for Guids (Globally unique IDs)
 
 Represents an empty mechanism.
 
-empty.go - Returns an empty guid ("00000000-0000-0000-0000-000000000000")
-empty.goStr - Returns an empty guid ("00000000-0000-0000-0000-000000000000")
+empty.go - Returns an empty guid ("00000000-0000-0000-0000-000000000000")  
+empty.goStr - Returns an empty guid ("00000000-0000-0000-0000-000000000000")  
 empty.isEmpty - always true
 
 ```javascript
@@ -65,10 +65,9 @@ newGuid.goStr; // returns the guid
 newGuid.isEmpty; // returns false
 ```
 
-Create an empty guid from using the empty mechanism:
+Create an empty guid using the empty mechanism:
 
 ```javascript
-// A guid initialized with the empty guid
 var newGuid = mguid.guid(mguid.empty.go);
 
 newGuid.go; // returns an empty guid
@@ -76,10 +75,19 @@ newGuid.goStr; // returns an empty guid
 newGuid.isEmpty; // returns true
 ```
 
+Create a guid using *make*. This is the same as making a guid without passing any parameter
+
+```javascript
+var newGuid = mguid.guid(mguid.make.go);
+
+newGuid.go; // returns the new guid
+newGuid.goStr; // returns the new guid
+newGuid.isEmpty; // returns false
+```
+
 Try to create an invalid guid and validate is true returns an empty guid.
 
 ```javascript
-// A guid initialized with the empty guid
 var newGuid = mguid.guid("INVALID", true);
 
 newGuid.go; // returns an empty guid

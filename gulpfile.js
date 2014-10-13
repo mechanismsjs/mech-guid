@@ -35,12 +35,9 @@ var banner = function(bundled) {
   ].join('\n') + '\n'
 };
 
-gulp.task('default', ['build','mocha','watch-mocha']);
+gulp.task('default', ['mocha','watch-mocha']);
 
 gulp.task('mocha', ['build'], function() {
-   
-   gulp.src('testsweb/index.html')
-     .pipe(mochaPhantom({reporter: 'spec'}));
    
    return gulp.src(['tests/*test.js'], { read: false })
       .pipe(mocha({ reporter: 'spec' }))
@@ -72,7 +69,7 @@ gulp.task('build', function() {
       .on('error', gutil.log);            // log any errors
 });
 
-gulp.task('webtests', function() {
+gulp.task('webtests', ['build'], function() {
   return gulp.src('testsweb/index.html')
     .pipe(mochaPhantom({reporter: 'spec'}))
 })

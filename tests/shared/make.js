@@ -9,9 +9,7 @@ describe ("guid make mechanism - make", function() {
    });
    
    it ("should make a guid correctly", function() {
-      var mech = mguid.make;
-      expect(mech.go.length).to.equal(36);
-      expect(mech.goStr.length).to.equal(36);
+      expect(mguid.isValid(mguid.make).go).to.be.true;
    });
 
    it ("should make different guids", function() {
@@ -72,19 +70,19 @@ describe ("guid make mechanism - make", function() {
          return n / count / divideby;
       });
       
-      // hex 14 is always 4, and hex 19 is always between 8 and 11
+      // hex 14 is always 4 V4 guid, and hex 19 is always between 8 and 11
       // from 0 - 7 sb between 0.94 and 1.0
       // from 8-12 sb between 1.00 and 1.10
       // from 13-17 between 0.94 and 1.0
       
       for (var k=0; k<8; k++) {
-         expect((numsc[k] <= 1.0) && (numsc[k] >= 0.90)).to.be.true;
+         expect(numsc[k]).to.be.within(0.90, 1.0);
       }
       for (var l=8; l<=11; l++) {
-         expect((numsc[l] >= 1.0) && (numsc[l] <= 1.15)).to.be.true;
+         expect(numsc[l]).to.be.within(1.0, 1.15);
       }
       for (var q=12; q<=15; q++) {
-         expect((numsc[q] <= 1.0) && (numsc[q] >= 0.90)).to.be.true;
+         expect(numsc[q]).to.be.within(0.90, 1.0);
       }
    });
    

@@ -1,5 +1,5 @@
 // mech-guid.js
-// version: 0.1.1
+// version: 0.1.2
 // author: Eric Hosick <erichosick@gmail.com> (http://www.erichosick.com/)
 // license: MIT
 (function() {
@@ -7,7 +7,7 @@
 var root = this; // Establish the root: window is browser, exports is server
 var previous = root.mguid; // Save previous
 var mguid = previous || {}; // New module or merge with previous
-mguid["version"] = '0.1.1'; // version updated by gulpfile.js build process
+mguid["version"] = '0.1.2'; // version updated by gulpfile.js build process
 
 // Export module for Node and the browser.
 if(typeof module !== 'undefined' && module.exports) {

@@ -1,13 +1,15 @@
 (function() {
 "use strict";
-var root = this; // Establish the root: window is browser, exports is server
-var previous = root.mguid; // Save previous
-var mguid = previous || {}; // New module or merge with previous
-mguid["version"] = '{{VERSION}}'; // version updated by gulpfile.js build process
+
+var root = this; // window (browser) or exports (server)
+var m = root.m || { guid : { _ : {} } }; // new module or merge with previous
+m.guid = m.guid || { guid : { _ : {} } }; // new sub-module or merge with pervious
+m.guid._ = m.guid._ || { _ : {}}; // new sub-module or merge with pervious
+m.guid["version-guid"] = '{{VERSION}}'; // New library OR to use existing library (m for example), please fork and add to that project.
 
 // Export module for Node and the browser.
 if(typeof module !== 'undefined' && module.exports) {
-  module.exports = mguid;
+  module.exports = m;
 } else {
-  this.mguid = mguid;
+  root.m = m
 }

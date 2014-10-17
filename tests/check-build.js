@@ -1,9 +1,9 @@
 describe("the modules were built correctly", function() {
    it ("should have the libary", function() {
-      expect(mguid).to.not.eql(undefined);
+      expect(m.guid).to.not.be.undefined;
    });
    
    it ("should have the correct version", function() {
-      expect(mguid["version"]).to.equal('0.1.2');
+      expect(m.guid["version-guid"]).to.equal('0.1.3');
    });
 });

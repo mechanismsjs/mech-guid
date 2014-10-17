@@ -1,6 +1,6 @@
 {
   "name": "mech-guid",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Guid mechanisms",
   "main": "./dist/mech-guid.js",
   "scripts": {
@@ -39,7 +39,6 @@
     "gulp-util": "^3.0.1",
     "mech-core": "*",
     "mocha": "^1.21.4",
-    "underscore": "^1.7.0",
     "vinyl-transform": "0.0.1"
   }
 }

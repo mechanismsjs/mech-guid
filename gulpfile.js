@@ -9,7 +9,6 @@ var replace = require('gulp-replace');
 var rename = require('gulp-rename');
 var mocha = require('gulp-mocha');
 var mochaPhantom  = require('gulp-mocha-phantomjs')
-
 var browserify = require('browserify');
 var transform = require('vinyl-transform');
 

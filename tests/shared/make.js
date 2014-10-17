@@ -1,19 +1,19 @@
 describe ("guid make mechanism - make", function() {   
    it ("should be a static mechanism", function() {
-      expect(mguid.make).to.have.property('toString');
+      expect(m.guid.make).to.have.property('toString');
    });
 
    it ("should have correct properties", function() {
-      var mech = mguid.make;
+      var mech = m.guid.make;
       expect(mech.isMech).to.be.true;
    });
    
    it ("should make a guid correctly", function() {
-      expect(mguid.isValid(mguid.make).go).to.be.true;
+      expect(m.guid.isValid(m.guid.make).go).to.be.true;
    });
 
    it ("should make different guids", function() {
-      var mech = mguid.make;
+      var mech = m.guid.make;
       
       for (var q=0; q<30; q++ ) {
          expect(mech.go).to.not.equal(mech.go);
@@ -25,7 +25,7 @@ describe ("guid make mechanism - make", function() {
       var nums = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
       var count = 10000;
       var divideby = 2/(32/31); // because pos #14 is always 4
-      var mech = mguid.make;
+      var mech = m.guid.make;
       for (var i=0;i<count;i++) {
          var x = mech.go;
          // of form 56ee5d88-5a14-4ecc-966c-00bf2fcc7cd6
@@ -66,7 +66,7 @@ describe ("guid make mechanism - make", function() {
          nums[parseInt(x[34], 16)]++;
          nums[parseInt(x[35], 16)]++;
       }
-      var numsc = _.map(nums, function(n){
+      var numsc = nums.map(function(n){
          return n / count / divideby;
       });
       

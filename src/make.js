@@ -13,4 +13,4 @@ var make = {
         _guidLut[d3&0xff]+_guidLut[d3>>8&0xff]+_guidLut[d3>>16&0xff]+_guidLut[d3>>24&0xff];
    }
 };
-mguid.make = make;
+m.guid.make = make;

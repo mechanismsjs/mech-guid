@@ -21,5 +21,5 @@ GuidF.prototype = Object.create ( Object.prototype, {
    go: { get: function() { return this._g.isMech ? this._g.go : this._g; } },
    goStr: { get: function() { return this._g.isMech ? this._g.goStr : this._g; } }
 });
-mguid.guid = guid;
-mguid.GuidF = GuidF;
+m.guid.guid = guid;
+m.guid._.GuidF = GuidF;

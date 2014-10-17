@@ -1,5 +1,5 @@
 // mech-guid.js
-// version: 0.1.3
+// version: 0.1.4
 // author: Eric Hosick <erichosick@gmail.com> (http://www.erichosick.com/)
 // license: MIT
 (function() {
@@ -9,7 +9,7 @@ var root = this; // window (browser) or exports (server)
 var m = root.m || { guid : { _ : {} } }; // new module or merge with previous
 m.guid = m.guid || { guid : { _ : {} } }; // new sub-module or merge with pervious
 m.guid._ = m.guid._ || { _ : {}}; // new sub-module or merge with pervious
-m.guid["version-guid"] = '0.1.3'; // New library OR to use existing library (m for example), please fork and add to that project.
+m.guid._["version-guid"] = '0.1.4'; // New library OR to use existing library (m for example), please fork and add to that project.
 
 // Export module for Node and the browser.
 if(typeof module !== 'undefined' && module.exports) {

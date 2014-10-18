@@ -1,11 +1,20 @@
 {
   "name": "mech-guid",
+  "namesub": "guid",    
   "version": "0.1.4",
   "description": "Guid mechanisms",
   "main": "./dist/mech-guid.js",
   "scripts": {
     "test": "gulp"
   },
+  "source": [
+     "src/util/header.js",
+     "src/guid.js",
+     "src/make.js",
+     "src/empty.js",
+     "src/isValid.js",
+     "src/util/footer.js"
+  ],  
   "repository": {
     "type": "git",
     "url": "https://github.com/mechanismsjs/mech-guid.git"

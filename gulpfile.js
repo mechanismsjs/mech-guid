@@ -1,4 +1,4 @@
-var pkg = require('./package.json')
+var pkg = require('./package.json'); // Changed this? Need to re-run gulp to reload the 
 var gulp = require('gulp');
 var gutil = require('gulp-util');
 var coffee = require('gulp-coffee');
@@ -12,17 +12,10 @@ var mochaPhantom  = require('gulp-mocha-phantomjs')
 var browserify = require('browserify');
 var transform = require('vinyl-transform');
 
-source = [
-   'src/util/header.js',
-   'src/guid.js',
-   'src/make.js',
-   'src/empty.js',
-   'src/isValid.js',
-   'src/util/footer.js'
-];
-
+var source = pkg.source;
 var libName = pkg.name;
 var libFileName = pkg.name + '.js';
+var libSubName = pkg.namesub;
 var libMain = pkg.main;
 
 var banner = function(bundled) {
@@ -34,10 +27,9 @@ var banner = function(bundled) {
   ].join('\n') + '\n'
 };
 
-gulp.task('default', ['mocha','watch-mocha']);
+gulp.task('default', ['build','mocha','watch-mocha']);
 
 gulp.task('mocha', ['build'], function() {
-   
    return gulp.src(['tests/*test.js'], { read: false })
       .pipe(mocha({ reporter: 'spec' }))
       .on('error', gutil.log);
@@ -47,19 +39,21 @@ gulp.task('watch-mocha', function() {
     return gulp.watch(['src/**', 'tests/**', 'testsweb/**'], ['mocha']);
 });
 
-gulp.task('build', function() {
+gulp.task('build', function(){
    // Single entry point to browserify
    var browserified = transform(function(filename) {
        return browserify()
          .require(libMain, {expose: libName})
          .bundle();
    });
-   
+
    return gulp.src(source)                // list of .js files we will concat
       .pipe(concat(libFileName))          // concat into pkg.name + '.js'
       .pipe(header(banner()))             // add header (your name, etc.)
       .pipe(replace('{{VERSION}}',        // update version tag in code
          pkg.version))
+      .pipe(replace('{{NAMESUB}}',        // update namesub tag in code
+         libSubName))
       .pipe(gulp.dest('dist'))            // dump pkg.name + '.js'
       .pipe(rename(libName + '.min.js'))  // rename for minify
       .pipe(uglify())                     // minify it
@@ -75,4 +69,6 @@ gulp.task('webtests', ['build'], function() {
   return gulp.src('testsweb/index.html')
     .pipe(mochaPhantom({reporter: 'spec'}))
 })
+
+
 

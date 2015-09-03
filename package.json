@@ -1,7 +1,7 @@
 {
 	"name": "mech-guid",
 	"namesub": "guid",
-	"version": "0.1.5",
+	"version": "0.2.0",
 	"description": "Guid mechanisms",
 	"main": "./dist/mech-guid.js",
 	"scripts": {

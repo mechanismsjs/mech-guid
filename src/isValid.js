@@ -5,9 +5,9 @@ function isValid(guid) {
 		f._g._parDir = f;
 	}
 	return f;
-};
+}
 
-function IsValidF() {};
+function IsValidF() {}
 // TODO: Only validates 'all' type guids. Need to allow validation of ver: 3,4,5
 IsValidF.prototype = Object.create(Object.prototype, {
 	isMech: {

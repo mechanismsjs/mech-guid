@@ -1,5 +1,5 @@
 // mech-guid.js
-// version: 0.2.0
+// version: 0.2.1
 // author: Eric Hosick <erichosick@gmail.com> (http://www.erichosick.com/)
 // license: MIT
 (function() {
@@ -9,7 +9,7 @@ var root = this; // window (browser) or exports (server)
 var m = root.m || { guid : { _ : {} } }; // merge with previous or new module
 m.guid = m.guid || { guid : { _ : {} } }; // merge with pervious or new sub-module
 m.guid._ = m.guid._ || { _ : {}}; // merge with pervious or new sub-module
-m.guid._["version-guid"] = '0.2.0'; // version set through gulp build
+m.guid._["version-guid"] = '0.2.1'; // version set through gulp build
 
 // export module for node or the browser
 if(typeof module !== 'undefined' && module.exports) {
@@ -108,9 +108,9 @@ function isValid(guid) {
 		f._g._parDir = f;
 	}
 	return f;
-};
+}
 
-function IsValidF() {};
+function IsValidF() {}
 // TODO: Only validates 'all' type guids. Need to allow validation of ver: 3,4,5
 IsValidF.prototype = Object.create(Object.prototype, {
 	isMech: {
@@ -133,5 +133,6 @@ IsValidF.prototype = Object.create(Object.prototype, {
 });
 m.guid.isValid = isValid;
 m.guid._.IsValidF = IsValidF;
+
 
 }.call(this));

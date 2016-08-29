@@ -1,9 +1,3 @@
-[mech-home-link]: https://github.com/mechanisms/mech "Home repository for mechanisms"
-[mech-core-link]: https://github.com/mechanismsjs/mech-core "Core mechanisms"
-[mech-web-link]: https://github.com/mechanismsjs/mech-web "Web centric DOM mechanisms"
-[mech-guid-link]: https://github.com/mechanismsjs/mech-guid "Guid mechanisms"
-[mech-library-link]: https://github.com/mechanismsjs/mech-library "Clone to easily create new mechanism libraries"
-
 # mech-guid
 
 A library of mechanisms for Guid (Globally unique IDs) data types and the generation of Guids.
@@ -148,24 +142,44 @@ mguid.make.goStr; // creates a new guid
 
 Change directory to your node project.
 
-    $ npm install --save mech-guid
+```
+$ npm install --save mech-guid
+```
 
 ## Development
 
+### Get Involved!
+
+There are **a lot** of core mechanisms just waiting to be created. Many of them can be created in a few hours including in-depth tests. Clone [mech-library][mech-library-link] to get started!
+
 ### Setup
 
-    $ npm install
+Install:
+```
+$ npm install
+```
 
-### Continuous Rebuild and Testing
+Continuous test:
+```
+$ gulp
+```
 
-See ./dist for files we build.
+Test:
+```
+$ gulp webtests
+```
 
-    $ gulp
+#### Test Server
 
-#### Test
+Read documentation in gulpfile.js to see how to setup automated web testing.
 
-    $ gulp webtests
+```
+$ gulp webserver
+```
 
-OR
-
-Right mouse click on /testsweb/index.html and open in browser.
+[mech-library-link]: https://github.com/mechanismsjs/mech-library "Clone to easily create new mechanism libraries"
+[mech-home-link]: https://github.com/mechanisms/mech "Home repository for mechanisms"
+[mech-core-link]: https://github.com/mechanismsjs/mech-core "Core mechanisms"
+[mech-web-link]: https://github.com/mechanismsjs/mech-web "Web centric DOM mechanisms"
+[mech-guid-link]: https://github.com/mechanismsjs/mech-guid "Guid mechanisms"
+[mech-library-link]: https://github.com/mechanismsjs/mech-library "Clone to easily create new mechanism libraries"
